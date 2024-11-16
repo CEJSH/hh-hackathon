@@ -21,7 +21,7 @@ export default function ListItem({
       : "h-24";
 
   return (
-    <Link href={}>
+    <Link href={""}>
       <div className={`${imageHeight}`}>
         <Image
           width={600}
