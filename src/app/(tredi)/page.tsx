@@ -17,15 +17,19 @@ export default function Home() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <main className="max-w-screen-lg mx-auto h-full">
-        <Suspense fallback={<div>로딩중</div>}>
-          <Top10List />
-        </Suspense>
-        {선택결과정보를가지나 && (
-          <PollingSection setReadyToPoll={setReadyToPoll} />
-        )}
-        {/* {!선택결과정보를가지나 && <UserSelectListSection />} */}
-      </main>
+      <Suspense
+        fallback={<FullPageLoader message={"검색결과를 기다리는 중입니다"} />}
+      >
+        <main className="max-w-screen-lg mx-auto h-full">
+          <Suspense fallback={<div>로딩중</div>}>
+            <Top10List />
+          </Suspense>
+          {선택결과정보를가지나 && (
+            <PollingSection setReadyToPoll={setReadyToPoll} />
+          )}
+          {/* {!선택결과정보를가지나 && <UserSelectListSection />} */}
+        </main>
+      </Suspense>
     </QueryClientProvider>
   );
 }
