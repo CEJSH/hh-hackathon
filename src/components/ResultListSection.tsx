@@ -43,7 +43,7 @@ export default function ResultListSection() {
       const fetchData = async () => {
         try {
           const response = await fetch(
-            "http://localhost:8080/api/v1/recommendations/select",
+            "http://13.124.40.2:8080/api/v1/recommendations/select",
             {
               headers: {
                 "Content-Type": "application/json",

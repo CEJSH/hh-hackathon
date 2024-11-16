@@ -1,7 +1,7 @@
 export async function postSelected(selected: string[] | null) {
   if (selected == null) return null;
   const response = await fetch(
-    "http://localhost:8080/api/v1/recommendations/select",
+    "http://13.124.40.2:8080/api/v1/recommendations/select",
     {
       headers: {
         "Content-Type": "application/json",
@@ -22,7 +22,7 @@ export async function getTaskStatus(taskId: string) {
   if (taskId == "") return null;
   console.log(taskId);
   const response = await fetch(
-    `http://localhost:8080/api/v1/recommendations/${taskId}`
+    `http://13.124.40.2:8080/api/v1/recommendations/${taskId}`
   );
 
   if (!response.ok) {
@@ -35,7 +35,7 @@ export async function getTaskStatus(taskId: string) {
 
 export async function getSelectedResult(taskId: string) {
   const response = await fetch(
-    `http://localhost:8080/api/v1/recommendations/result/${taskId}`
+    `http://13.124.40.2:8080/api/v1/recommendations/result/${taskId}`
   );
 
   if (!response.ok) {
