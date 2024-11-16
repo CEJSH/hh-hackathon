@@ -49,7 +49,7 @@ export default function ResultListSection() {
                 "Content-Type": "application/json",
               },
               method: "POST",
-              body: JSON.stringify({ keywords: selectedCategory }),
+              body: JSON.stringify({ keyword: selectedCategory }),
             }
           );
           if (!response.ok) {

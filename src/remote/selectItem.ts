@@ -7,7 +7,7 @@ export async function postSelected(selected: string[] | null) {
         "Content-Type": "application/json",
       },
       method: "POST",
-      body: JSON.stringify({ keywords: selected }),
+      body: JSON.stringify({ keyword: selected }),
     }
   );
 

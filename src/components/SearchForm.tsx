@@ -1,5 +1,5 @@
 import FullPageLoader from "./FullpageLoader";
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 // import { getSearchPageLink } from "@/src/shared/utils/link/page";
 
 export const SearchForm = ({
@@ -9,7 +9,7 @@ export const SearchForm = ({
   readyToPoll: boolean;
   setReadyToPoll: Dispatch<SetStateAction<boolean>>;
 }) => {
-  //   const router = useRouter();
+  const [data, setData] = useState([]);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -19,8 +19,30 @@ export const SearchForm = ({
     const queryValue = queryInput?.value ?? "";
 
     if (queryValue !== "") {
-      //   router.push(getSearchPageLink({ q: queryValue }));
-      setReadyToPoll(true);
+      const fetchData = async () => {
+        try {
+          const response = await fetch(
+            "http://13.124.40.2:8080/api/v1/recommendations/search",
+            {
+              headers: {
+                "Content-Type": "application/json",
+              },
+              method: "POST",
+              body: JSON.stringify({ keyword: queryValue }),
+            }
+          );
+          if (!response.ok) {
+            throw new Error("Failed to fetch popular item");
+          }
+          const data = await response.json();
+          console.log(data);
+          // setData(data.d)
+          // console.log(taskId);
+        } catch (error) {
+          console.error("Error fetching data:", error);
+        }
+      };
+      fetchData();
     }
   };
   if (readyToPoll) {
