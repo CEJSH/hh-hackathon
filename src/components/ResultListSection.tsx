@@ -8,6 +8,7 @@ import {
   useSelectedItemResults,
   useTaskStatus,
 } from "./Select/hooks/useSelectItems";
+import Link from "next/link";
 
 interface Item {
   rank: number;
@@ -20,6 +21,7 @@ export default function ResultListSection() {
   const [selectedCategory, setSelectedCategory] = useState<string[] | null>(
     null
   );
+
   const [taskId, setTaskId] = useState<string>("");
 
   const { data, isLoading } = useTaskStatus({
@@ -128,9 +130,11 @@ export default function ResultListSection() {
       </span>
       <ul className="h-full grid grid-cols-2 lg:grid-cols-3 gap-8">
         {images.map((image: string, idx: number) => (
-          <li key={`image-${idx}`} className="list-none">
-            <ListItemWithDetail imageUrl={image ?? resultImages} idx={1} />
-          </li>
+          <Link key={`image-${idx}`} href={`/article/${idx}`}>
+            <li className="list-none">
+              <ListItemWithDetail imageUrl={image ?? resultImages} idx={1} />
+            </li>
+          </Link>
         ))}
         {true && <Loading />}
       </ul>

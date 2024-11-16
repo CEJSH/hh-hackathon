@@ -21,7 +21,7 @@ export default function ListItem({
       : "h-24";
 
   return (
-    <Link href={""}>
+    <Link href={`/article/${idx}`}>
       <div className={`${imageHeight}`}>
         <Image
           width={600}
@@ -31,11 +31,11 @@ export default function ListItem({
           className="w-full h-full !object-cover rounded-md"
         />
       </div>
-      <div className="px-[2px]">
-        <span className="h-[45px] inline-block mt-2 text:md sm:text-lg font-bold text-gray-800 !leading-[125%]">
+      <div className="px-[2px] text-[#434343]">
+        <span className="h-[45px] inline-block mt-2 text:md sm:text-lg font-bold!leading-[125%]">
           {title![idx]}
         </span>
-        <div>description and summary</div>
+        <div className="mt-1">Hi this is tredi. nice to meet u</div>
       </div>
     </Link>
   );
