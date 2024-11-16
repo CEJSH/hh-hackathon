@@ -32,7 +32,7 @@ export default function ListItem({
         />
       </div>
       <div className="px-[2px] text-[#434343]">
-        <span className="h-[45px] inline-block mt-2 text:md sm:text-lg font-bold!leading-[125%]">
+        <span className="h-[45px] inline-block mt-2 text:md sm:text-lg font-bold !leading-[120%]">
           {title![idx]}
         </span>
         <div className="mt-1">Hi this is tredi. nice to meet u</div>
