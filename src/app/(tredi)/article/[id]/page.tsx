@@ -1,11 +1,7 @@
 import Image from "next/image";
 import React from "react";
-interface ParamsProps {
-  params: { id: string };
-  searchParams: { page: string };
-}
-export default function ArticlePage({ params, searchParams }: ParamsProps) {
-  console.log(params, searchParams);
+
+export default function ArticlePage() {
   const article = {
     title: "123",
     description: "123",
