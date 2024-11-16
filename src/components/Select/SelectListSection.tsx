@@ -33,7 +33,7 @@ export default function SelectListSection({
             key={option}
           >
             <button
-              className={`w-40 h-28 rounded-full bg-violet-100 text-base md:text-md text-[#434343] ${
+              className={`w-40 h-28 rounded-full text-base md:text-md text-[#434343] ${
                 selected.includes(option)
                   ? "bg-[#e6f4ff] text-[#003eb3] hover:bg-[#bae0ff]"
                   : "bg-[#1677ff] text-white hover:bg-[#125ec4]"

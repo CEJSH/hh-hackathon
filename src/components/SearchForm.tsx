@@ -20,6 +20,7 @@ export const SearchForm = ({
 
     if (queryValue !== "") {
       const fetchData = async () => {
+        console.log(queryValue);
         try {
           const response = await fetch(
             "http://13.124.40.2:8080/api/v1/recommendations/search",
