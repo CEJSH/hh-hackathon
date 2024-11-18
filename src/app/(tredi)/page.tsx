@@ -24,7 +24,10 @@ export default function Home() {
           <Suspense fallback={<div>로딩중</div>}>
             <Top10List />
           </Suspense>
-          {선택결과정보를가지나 && <PollingSection />}
+          {선택결과정보를가지나 && (
+            <PollingSection setReadyToPoll={setReadyToPoll} />
+          )}
+          {/* {!선택결과정보를가지나 && <UserSelectListSection />} */}
         </main>
       </Suspense>
     </QueryClientProvider>
@@ -32,6 +35,10 @@ export default function Home() {
 }
 
 // Polling 로직을 별도 컴포넌트로 분리
-function PollingSection() {
-  return <ResultListSection />;
+function PollingSection({
+  setReadyToPoll,
+}: {
+  setReadyToPoll: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
+  return <ResultListSection setReadyToPoll={setReadyToPoll} />;
 }
