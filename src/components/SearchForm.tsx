@@ -37,7 +37,6 @@ export const SearchForm = ({
           }
           const data = await response.json();
           console.log(data);
-          setData(data);
           setReadyToPoll(true);
           // console.log(taskId);
         } catch (error) {
