@@ -63,6 +63,7 @@ export default function ResultListSection({
           const taskId = data.data.taskId;
           console.log(taskId);
           setTaskId(taskId);
+          setReadyToPoll(true);
         } catch (error) {
           console.error("Error fetching data:", error);
         }

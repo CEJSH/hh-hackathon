@@ -1,5 +1,5 @@
 import FullPageLoader from "./FullpageLoader";
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 // import { getSearchPageLink } from "@/src/shared/utils/link/page";
 
 export const SearchForm = ({
