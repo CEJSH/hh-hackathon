@@ -35,9 +35,10 @@ export default function Home() {
 }
 
 // Polling 로직을 별도 컴포넌트로 분리
-function PollingSection({}: // setReadyToPoll,
-{
+function PollingSection({
+  setReadyToPoll,
+}: {
   setReadyToPoll: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
-  return <ResultListSection />;
+  return <ResultListSection setReadyToPoll={setReadyToPoll} />;
 }

@@ -9,7 +9,7 @@ export const SearchForm = ({
   readyToPoll: boolean;
   setReadyToPoll: Dispatch<SetStateAction<boolean>>;
 }) => {
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -37,7 +37,8 @@ export const SearchForm = ({
           }
           const data = await response.json();
           console.log(data);
-          // setData(data.d)
+          setData(data);
+          setReadyToPoll(true);
           // console.log(taskId);
         } catch (error) {
           console.error("Error fetching data:", error);

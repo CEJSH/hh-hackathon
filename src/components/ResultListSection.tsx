@@ -17,7 +17,11 @@ interface Item {
   thumbnail: string;
 }
 
-export default function ResultListSection() {
+export default function ResultListSection({
+  setReadyToPoll,
+}: {
+  setReadyToPoll: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
   const [selectedCategory, setSelectedCategory] = useState<string[] | null>(
     null
   );
